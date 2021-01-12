@@ -3,13 +3,14 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
+
 def AWS_data():
 
     ec2 = boto3.client('ec2',region_name='ap-south-1',aws_access_key_id='AKIAIXZZQ4JTBNDPYDOA',aws_secret_access_key='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')
 
     response = ec2.describe_instances()
 
-    #print(response)
+    print(response)
     ip = []
     id = []
     #"Reservations[*].Instances[*].[PublicIpAddress, Tags[?Key=='Name'].Value|[0]]" --output=text
